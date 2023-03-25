@@ -1,36 +1,38 @@
 package web.tests;
 
-import com.codeborne.selenide.Selenide;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import web.pages.createStickerPage.TestDataCreateStickerPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class CreateStickerTest extends TestBase {
 
+    TestDataCreateStickerPage testDataCreateStickerPage = new TestDataCreateStickerPage();
+
     @Test
     @Tag("giphy")
     @DisplayName("Проверка попытки создания стикера без авторизации на сайте")
+    @Epic("Релиз 1.0")
+    @Story("Создание стикеров")
+    @Owner("Алина Папсуева")
+    @Severity(SeverityLevel.CRITICAL)
     public void createStickerWithoutLoginTest() {
         step("Открытие страницы создания стикеров", () -> {
-            Selenide.open("https://giphy.com");
-            $("[href='/create/gifmaker']").click();
+            open(baseUrl);
+            mainPage.clickCreateButton();
         });
 
         step("Попытка загрузки картинки для создания стикера", () -> {
-            $$("h3").findBy(text("Sticker")).ancestor("div").$("input[type='file']").
-                    uploadFromClasspath("images/cat.jpg");
+            createStickerPage.setPicture(testDataCreateStickerPage.picture);
         });
 
         step("Проверка: чтобы создать стикер, необходимо залогиниться на сайте", () -> {
-            $(".modal__Container-sc-zyc6ci-0").
-                    shouldBe(visible).
-                    shouldHave(text("You've gotta log in to upload to GIPHY!"));
+            createStickerPage.verifyResult();
         });
     }
 }

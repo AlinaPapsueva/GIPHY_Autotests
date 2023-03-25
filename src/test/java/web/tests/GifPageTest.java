@@ -1,15 +1,12 @@
 package web.tests;
 
-import com.codeborne.selenide.Selenide;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.withTagAndText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class GifPageTest extends TestBase {
@@ -17,47 +14,52 @@ public class GifPageTest extends TestBase {
     @Test
     @Tag("giphy")
     @DisplayName("Проверка кнопки Share на странице гифки")
+    @Epic("Релиз 1.0")
+    @Story("Развитие страницы гифки")
+    @Owner("Алина Папсуева")
+    @Severity(SeverityLevel.CRITICAL)
     public void shareButtonTest() {
         step("Открытие страницы гифки", () -> {
-            Selenide.open("https://giphy.com/");
-            $(".giphy-gif").click();
+            open(baseUrl);
+            mainPage.openGifPage();
         });
 
         step("Клик на кнопку \"Share\"", () -> {
-            $(withTagAndText("span", "Share")).click();
+            gifPage.shareButtonClick();
         });
 
         step("Проверка: открылось модальное окно для копирования ссылки гифки", () -> {
-            $(".CopyWrapper-sc-6y8nbc").
-                    shouldBe(visible).
-                    shouldHave(text("Copy GIF Link"));
+            gifPage.verifyModalForCopyIsOpen();
         });
 
         step("Клик на кнопку \"Copy GIF Link\"", () -> {
-            $(".CopyWrapper-sc-6y8nbc").click();
+            gifPage.copyButtonClick();
         });
 
         step("Проверка: текст \"Copy GIF Link\" изменился на \"Link Copied!\"", () -> {
-            $(".CopyWrapper-sc-6y8nbc").$("button").
-                    shouldHave(text("Link Copied!"));
+            gifPage.verifySwitchTextOnCopyButton();
         });
     }
 
     @Test
     @Tag("giphy")
     @DisplayName("Проверка кнопок с тэгами под гифкой")
+    @Epic("Релиз 1.0")
+    @Story("Развитие страницы гифки")
+    @Owner("Алина Папсуева")
+    @Severity(SeverityLevel.CRITICAL)
     public void tagButtonTest() {
         step("Открытие страницы гифки", () -> {
-            Selenide.open("https://giphy.com/");
-            $(".giphy-gif").click();
+            open(baseUrl);
+            mainPage.openGifPage();
         });
 
         step("Клик на первый тег", () -> {
-            $$(".TagsContainer-sc-1i1183u .Container-sc-1xevvej a").get(0).click();
+            gifPage.tagButtonClick();
         });
 
         step("Проверка: открылась страница с гифками, найденными по тегу", () -> {
-            $("#content h1").shouldHave(text("Explore"));
+            gifPage.verifyHeaderOnTagSearchPage();
         });
     }
 }

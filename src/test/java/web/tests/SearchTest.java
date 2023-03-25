@@ -1,12 +1,12 @@
 package web.tests;
 
-import com.codeborne.selenide.Selenide;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class SearchTest extends TestBase {
@@ -14,25 +14,27 @@ public class SearchTest extends TestBase {
     @Test
     @Tag("giphy")
     @DisplayName("Проверка поиска по @user + tag")
+    @Epic("Релиз 1.0")
+    @Story("Развитие поиска")
+    @Owner("Алина Папсуева")
+    @Severity(SeverityLevel.CRITICAL)
     public void searchUserPlusTagTest() {
-        step("Открытие сайта", () -> {
-            Selenide.open("https://giphy.com/");
-        });
+        step("Открытие сайта", () -> open(baseUrl));
 
         step("Поиск @meganmotown + cat через поисковую строку", () -> {
-            $("input").setValue("@meganmotown cat").pressEnter();
+            mainPage.setValueInSearchInputAndPressEnter();
         });
 
         step("Открытие первой гифки в списке найденных", () -> {
-            $(".giphy-grid a").click();
+            searchResultPage.openFirstGifCard();
         });
 
         step("Проверка: на странице гифки указан искомый юзер", () -> {
-            $(".PublicUserDiv-sc-6zak0l").shouldHave(text("megan motown"));
+            gifPage.verifyUserNameInGifPage();
         });
 
         step("Проверка: на странице гифки присутствует искомый тег", () -> {
-            $(".TagsContainer-sc-1i1183u").shouldHave(text("#cat"));
+            gifPage.verifyTagNameInGifPage();
         });
     }
 }

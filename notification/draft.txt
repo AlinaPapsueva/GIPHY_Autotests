@@ -1,0 +1,21 @@
+Telegram username: @allure_report_notif_bot
+Telegram token: bot6238211983:AAGZL0Dqp8YfCbfy7c7GIaaf2cSTgQT9NAs
+Chat id: -1001851209111
+
+Fetch bot updates and look for the chat id:
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+curl https://api.telegram.org/bot6238211983:AAGZL0Dqp8YfCbfy7c7GIaaf2cSTgQT9NAs/getUpdates
+
+Send a message using the HTTP API:
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "123456789", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001851209111", "text": "keshka", "disable_notification": true}' https://api.telegram.org/bot6238211983:AAGZL0Dqp8YfCbfy7c7GIaaf2cSTgQT9NAs/sendMessage
+
+
+
+Run jar with notifications
+java "-DconfigFile=notification/telegram.json" -jar notification/allure-notifications-4.2.1.jar
+
+
+Slack
+channel: #qa_guru_17
+bot token: xoxb-1687076169986-4740795293235-tKVUiaaj6EBeSJuZfqcrXXal

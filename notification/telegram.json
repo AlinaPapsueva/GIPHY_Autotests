@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "${JOB_BASE_NAME}",
+    "environment": "dev",
+    "comment": " giphy",
+    "reportLink": "${BUILD_URL}",
+    "language": "ru",
+    "messenger": "telegram",
+    "allureFolder": "allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6238211983:AAGZL0Dqp8YfCbfy7c7GIaaf2cSTgQT9NAs",
+    "chat": "-1001851209111",
+    "replyTo": ""
+  }
+}

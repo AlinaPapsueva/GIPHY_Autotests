@@ -38,10 +38,13 @@ public class SupportPagesTest extends TestBase {
     @Owner("Алина Папсуева")
     @Severity(SeverityLevel.CRITICAL)
     public void openFaqTest() {
-        step("Открытие сайта ", () -> open(baseUrl));
+        step("Открытие сайта", () -> open(baseUrl));
 
-        step("Открытие страницы FAQ ", () -> {
+        step("Закрытие баннера \"Privacy Policy\"", () -> {
             mainPage.closePrivacyPolicyBanner();
+        });
+
+        step("Открытие страницы FAQ в расширенном верхнем меню", () -> {
             mainPage.expandHeaderMenu();
             mainPage.openFaqPage();
         });

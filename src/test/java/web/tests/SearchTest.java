@@ -21,7 +21,7 @@ public class SearchTest extends TestBase {
     public void searchUserPlusTagTest() {
         step("Открытие сайта", () -> open(baseUrl));
 
-        step("Поиск @meganmotown + cat через поисковую строку", () -> {
+        step("Поиск @user + tag через поисковую строку", () -> {
             mainPage.setValueInSearchInputAndPressEnter();
         });
 

@@ -1,9 +1,12 @@
 package web.pages.mainPage;
 
 import com.codeborne.selenide.SelenideElement;
+import web.pages.userPage.UserPage;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 

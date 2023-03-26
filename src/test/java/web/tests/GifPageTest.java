@@ -21,6 +21,9 @@ public class GifPageTest extends TestBase {
     public void shareButtonTest() {
         step("Открытие страницы гифки", () -> {
             open(baseUrl);
+        });
+
+        step("Клик на первую в списке гифку", () -> {
             mainPage.openGifPage();
         });
 
@@ -49,8 +52,9 @@ public class GifPageTest extends TestBase {
     @Owner("Алина Папсуева")
     @Severity(SeverityLevel.CRITICAL)
     public void tagButtonTest() {
-        step("Открытие страницы гифки", () -> {
-            open(baseUrl);
+        step("Открытие страницы гифки", () -> open(baseUrl));
+
+        step("Клик на первую в списке гифку", () -> {
             mainPage.openGifPage();
         });
 

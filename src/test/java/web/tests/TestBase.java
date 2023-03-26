@@ -1,23 +1,21 @@
 package web.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import web.config.WebDriverProvider;
 import web.helpers.Attach;
-import web.pages.*;
-import web.pages.createStickerPage.CreateStickerPage;
 import web.pages.FaqPage;
+import web.pages.PrivacyPolicyPage;
+import web.pages.SearchResultPage;
+import web.pages.createStickerPage.CreateStickerPage;
 import web.pages.gifPage.GifPage;
 import web.pages.loginPage.LoginPage;
 import web.pages.mainPage.MainPage;
 import web.pages.userPage.UserPage;
-
-import java.util.Map;
 
 public class TestBase {
 
@@ -32,20 +30,7 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
-        Configuration.baseUrl = "https://giphy.com";
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
-//        Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        Configuration.pageLoadStrategy = "eager";
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,  // включает режим окошко_в_окошке
-                "enableVideo", true         // включает запись видео
-        ));
-
-        Configuration.browserCapabilities = capabilities;
+        WebDriverProvider provider = new WebDriverProvider();
     }
 
     @BeforeEach

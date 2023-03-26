@@ -22,8 +22,9 @@ public class CreateStickerTest extends TestBase {
     @Owner("Алина Папсуева")
     @Severity(SeverityLevel.CRITICAL)
     public void createStickerWithoutLoginTest() {
-        step("Открытие страницы создания стикеров", () -> {
-            open(baseUrl);
+        step("Открытие сайта", () -> open(baseUrl));
+
+        step("Клик на кнопку Create", () -> {
             mainPage.clickCreateButton();
         });
 

@@ -32,6 +32,9 @@ public class LoginTest extends TestBase {
         step("Ввод данных в поля email и password рандомных значений", () -> {
             loginPage.setValueEmailInput();
             loginPage.setValuePasswordInput();
+        });
+
+        step("Клик на кнопку \"Log in\"", () -> {
             loginPage.clickLoginButton();
         });
 

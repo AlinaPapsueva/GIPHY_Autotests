@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class LoginTest extends TestBase {
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка логина с рандомными значениями")
     @Epic("Релиз 1.0 UI")
     @Story("Логин пользователя")

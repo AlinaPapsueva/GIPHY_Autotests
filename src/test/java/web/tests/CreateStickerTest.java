@@ -16,7 +16,7 @@ public class CreateStickerTest extends TestBase {
     TestDataCreateStickerPage testDataCreateStickerPage = new TestDataCreateStickerPage();
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка попытки создания стикера без авторизации на сайте")
     @Epic("Релиз 1.0 UI")
     @Story("Создание стикеров")

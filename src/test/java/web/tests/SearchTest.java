@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTest extends TestBase {
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка поиска по @user + tag")
     @Epic("Релиз 1.0 UI")
     @Story("Развитие поиска")

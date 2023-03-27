@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class MainPageTest extends TestBase {
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка элементов верхнего меню")
     @Epic("Релиз 1.0 UI")
     @Story("Развитие главной страницы")
@@ -32,7 +32,7 @@ public class MainPageTest extends TestBase {
     }
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка основных блоков на главной странице")
     @Epic("Релиз 1.0 UI")
     @Story("Развитие главной страницы")

@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class GifPageTest extends TestBase {
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка кнопки Share на странице гифки")
     @Epic("Релиз 1.0 UI")
     @Story("Развитие страницы гифки")
@@ -46,7 +46,7 @@ public class GifPageTest extends TestBase {
     }
 
     @Test
-    @Tag("giphy")
+    @Tag("giphy_ui")
     @DisplayName("Проверка кнопок с тэгами под гифкой")
     @Epic("Релиз 1.0 UI")
     @Story("Развитие страницы гифки")

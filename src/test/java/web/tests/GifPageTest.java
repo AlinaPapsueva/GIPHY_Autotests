@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import web.config.TestBase;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
@@ -14,7 +15,7 @@ public class GifPageTest extends TestBase {
     @Test
     @Tag("giphy")
     @DisplayName("Проверка кнопки Share на странице гифки")
-    @Epic("Релиз 1.0")
+    @Epic("Релиз 1.0 UI")
     @Story("Развитие страницы гифки")
     @Owner("Алина Папсуева")
     @Severity(SeverityLevel.CRITICAL)
@@ -47,10 +48,10 @@ public class GifPageTest extends TestBase {
     @Test
     @Tag("giphy")
     @DisplayName("Проверка кнопок с тэгами под гифкой")
-    @Epic("Релиз 1.0")
+    @Epic("Релиз 1.0 UI")
     @Story("Развитие страницы гифки")
     @Owner("Алина Папсуева")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     public void tagButtonTest() {
         step("Открытие страницы гифки", () -> open(baseUrl));
 

@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import web.config.TestBase;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
@@ -13,11 +14,11 @@ public class LoginTest extends TestBase {
 
     @Test
     @Tag("giphy")
-    @DisplayName("Проверка элементов верхнего меню")
-    @Epic("Релиз 1.0")
-    @Story("Развитие главной страницы")
+    @DisplayName("Проверка логина с рандомными значениями")
+    @Epic("Релиз 1.0 UI")
+    @Story("Логин пользователя")
     @Owner("Алина Папсуева")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     public void logInWithFakeDataTest() {
         step("Открытие сайта", () -> open(baseUrl));
 

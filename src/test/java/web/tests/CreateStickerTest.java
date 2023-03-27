@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import web.config.TestBase;
 import web.pages.createStickerPage.TestDataCreateStickerPage;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -17,10 +18,10 @@ public class CreateStickerTest extends TestBase {
     @Test
     @Tag("giphy")
     @DisplayName("Проверка попытки создания стикера без авторизации на сайте")
-    @Epic("Релиз 1.0")
+    @Epic("Релиз 1.0 UI")
     @Story("Создание стикеров")
     @Owner("Алина Папсуева")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     public void createStickerWithoutLoginTest() {
         step("Открытие сайта", () -> open(baseUrl));
 

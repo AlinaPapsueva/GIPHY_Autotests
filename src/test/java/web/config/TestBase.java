@@ -1,4 +1,4 @@
-package web.tests;
+package web.config;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -6,7 +6,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import web.config.WebDriverProvider;
 import web.helpers.Attach;
 import web.pages.FaqPage;
 import web.pages.PrivacyPolicyPage;
@@ -19,14 +18,14 @@ import web.pages.userPage.UserPage;
 
 public class TestBase {
 
-    MainPage mainPage = new MainPage();
-    GifPage gifPage = new GifPage();
-    FaqPage faqPage = new FaqPage();
-    UserPage userPage = new UserPage();
-    LoginPage loginPage = new LoginPage();
-    CreateStickerPage createStickerPage = new CreateStickerPage();
-    PrivacyPolicyPage privacyPolicyPage = new PrivacyPolicyPage();
-    SearchResultPage searchResultPage = new SearchResultPage();
+    public MainPage mainPage = new MainPage();
+    public GifPage gifPage = new GifPage();
+    public FaqPage faqPage = new FaqPage();
+    public UserPage userPage = new UserPage();
+    public LoginPage loginPage = new LoginPage();
+    public CreateStickerPage createStickerPage = new CreateStickerPage();
+    public PrivacyPolicyPage privacyPolicyPage = new PrivacyPolicyPage();
+    public SearchResultPage searchResultPage = new SearchResultPage();
 
     @BeforeAll
     static void setUp() {

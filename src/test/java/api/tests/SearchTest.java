@@ -14,7 +14,7 @@ import static api.helpers.Endpoints.getGifsSearch;
 import static api.spec.Specification.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchTest {
 
@@ -41,7 +41,7 @@ public class SearchTest {
                     .spec(responseSpec200)
                     .extract().body().jsonPath().getList("data", SearchBodyResponseModel.class);
 
-            searchBodyResponseModel.forEach(x -> assertEquals(x.getType(), searchTestData.qSearchTextSticker));
+            searchBodyResponseModel.forEach(x -> assertThat(x.getType()).isEqualTo(searchTestData.qSearchTextSticker));
         });
     }
 

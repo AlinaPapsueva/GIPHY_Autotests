@@ -13,7 +13,7 @@ import static api.helpers.Endpoints.getGifs;
 import static api.spec.Specification.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetGifByIdTest {
 
@@ -40,7 +40,7 @@ public class GetGifByIdTest {
 
             JsonPath jsonPath = response.jsonPath();
             Object id = jsonPath.get("data.id");
-            assertEquals(id, getGifByIdTestData.gifIdCorrect);
+            assertThat(id).isEqualTo(getGifByIdTestData.gifIdCorrect);
         });
     }
 

@@ -61,8 +61,14 @@ tasks.withType(Test) {
     }
 }
 
-task giphy(type: Test) {
+task giphy_ui(type: Test) {
     useJUnitPlatform {
-        includeTags ("giphy")
+        includeTags ("giphy_ui")
+    }
+}
+
+task giphy_api(type: Test) {
+    useJUnitPlatform {
+        includeTags ("giphy_api")
     }
 }

@@ -67,7 +67,7 @@ public class SearchTest {
 
     @Test
     @Tag("giphy_api")
-    @DisplayName("Поиск без обязательного параметра \"q\"")
+    @DisplayName("БАГ в API - Поиск без обязательного параметра \"q\"")
     @Epic("Релиз 1.0 API")
     @Story("Настройка backend")
     @Owner("Алина Папсуева")

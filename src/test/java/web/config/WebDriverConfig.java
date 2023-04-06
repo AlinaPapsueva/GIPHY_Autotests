@@ -3,7 +3,7 @@ package web.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:properties/configurations/webTests/${env}.properties"
+        "classpath:properties/webTests/${env}.properties"
 })
 
 public interface WebDriverConfig extends Config {

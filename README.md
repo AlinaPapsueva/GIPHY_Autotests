@@ -122,7 +122,7 @@ ${test_run}
 
 <a href="#list">К Содержанию</a>
 
-## <a id="jenkins"></a> <img width="30" alt="Jenkins" src="readme/icons/Jenkins_ico.svg"> Сборка в Jenkins
+## <a id="jenkins"></a> <img width="30" alt="Jenkins" src="readme/icons/Jenkins_ico.svg"> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C17-linakramer-Diplom/)
 
 :information_source: При сборке в Jenkins можно выбрать параметры из выпадающих списков   
 
@@ -130,7 +130,7 @@ ${test_run}
 
 <a href="#list">К Содержанию</a>
 
-## <a id="allure"></a> <img width="30" alt="Allure" src="readme/icons/Allure_ico.svg"> Allure отчеты
+## <a id="allure"></a> <img width="30" alt="Allure" src="readme/icons/Allure_ico.svg"> [Allure](https://jenkins.autotests.cloud/job/C17-linakramer-Diplom/10/allure/) отчеты
 
 :information_source: По итогам сборки в Jenkins собирается отчет в Allure Report   
 * Автотесты написаны как "шаги" через SelenideLogger.addListener + step() = описание пройденных тестов понятно любому сотруднику
@@ -140,27 +140,27 @@ ${test_run}
   - логов браузера
   - видео прохождения тестов
 
-<img alt="AllureReportMain_screenshot" src="readme/screenshots/AllureReportMain.PNG">
-<img alt="AllureReportSuites_screenshot" src="readme/screenshots/AllureReportSuites.PNG">
+<img alt="AllureReport_screenshot" src="readme/screenshots/AllureReport.PNG">
+<img alt="AllureReportTest_screenshot" src="readme/screenshots/AllureReportTest.PNG">
 
 <a href="#list">К Содержанию</a>
 
 ## <a id="telegram"></a> <img width="30" alt="Telegram" src="readme/icons/Telegram_ico.svg"> Отчёт в Telegram
 :information_source: Также отчет по сборке можно отправить в телеграм через бота
 
-<img alt="TelegramReport_screenshot" src="readme/screenshots/TelegramReport.PNG">
+<img alt="Telegram_screenshot" src="readme/screenshots/Telegram.PNG">
 
 <a href="#list">К Содержанию</a>
 
-## <a id="testops"> <img width="25" alt="TestOps" src="readme/icons/TestOpspng.png"> Интеграция с Allure TestOps
+## <a id="testops"> <img width="25" alt="TestOps" src="readme/icons/TestOpspng.png"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/21158)
 :information_source: Настроена интеграция с Allure TestOps, в котором также можно увидеть отчет о прохождении автотестов
   
-<img alt="TestOpsLaunches_screenshot" src="readme/screenshots/TestOpsLaunches.PNG">
-<img alt="TestOpsLaunchTree_screenshot" src="readme/screenshots/TestOpsLaunchTree.PNG">
+<img alt="AllureTestOpsLaunches_screenshot" src="readme/screenshots/AllureTestOpsLaunches.PNG">
+<img alt="AllureTestOpsLaunchesTreeTests_screenshot" src="readme/screenshots/AllureTestOpsLaunchesTreeTests.PNG">
 
 <a href="#list">К Содержанию</a>
 
-## <a id="jira"></a> <img width="30" alt="Jira" src="readme/icons/Jira.svg"> Интеграция с Jira
+## <a id="jira"></a> <img width="30" alt="Jira" src="readme/icons/Jira.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-620)
 :information_source: Настроена интеграция Allure TestOps с Jira.
 Тест-кейсы и результаты прогонов можно прикреплять к необходимым задачам.
   
@@ -171,6 +171,6 @@ ${test_run}
 ## <a id="video"></a> <img width="30" alt="Selenoid" src="readme/icons/Selenoid_ico.svg"> Пример прогона теста в Selenoid
 :information_source: Видео прогона одного из кейсов. Записано автоматически.
   
-<img alt="SelenoidVideo_video" src="readme/SelenoidVideo.gif">
+<img alt="SelenoidVideo_video" src="readme/video.gif">
 
 <a href="#list">К Содержанию</a>

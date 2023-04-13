@@ -39,7 +39,7 @@
 <a href="https://selenide.org/"><img width="75" alt="Selenide" src="readme/icons/Selenide.svg"></a>
 <a href="https://aerokube.com/selenoid/"><img width="75" alt="Selenoid" src="readme/icons/Selenoid.svg"></a>
 <a href="https://github.com/allure-framework/allure2"><img width="75" alt="Allure" src="readme/icons/Allure.svg"></a>
-<a href="https://qameta.io)"><img width="55" alt="TestOps" src="readme/icons/TestOpspng.png"></a>
+<a href="https://qameta.io"><img width="55" alt="TestOps" src="readme/icons/TestOpspng.png"></a>
 <a href="https://www.jenkins.io/"><img width="75" alt="Jenkins" src="readme/icons/Jenkins.svg"></a>
 <a href="https://telegram.org/"><img width="75" alt="Telegram" src="readme/icons/Telegram.svg"></a>
 <a href="https://www.atlassian.com/ru/software/jira"><img width="75" alt="Jira" src="readme/icons/Jira.svg"></a>
@@ -47,11 +47,28 @@
 
 
 ## :white_check_mark: <a id="cases"></a> Реализованные проверки
-:heavy_check_mark: Проверка основных элементов на главной странице   
-:heavy_check_mark: Проверка перехода в Личный кабинет без vpn   
-:heavy_check_mark: Проверка перехода на страницу Карьера   
-:heavy_check_mark: Проверка работы фильтра вакансий - есть хотя бы 1 вакансия   
-:heavy_check_mark: Проверка работы фильтра вакансий - вакансий не найдено   
+<a id="cases-ui"></a>UI-кейсы:
+  
+:heavy_check_mark: Проверка создания стикера без авторизации на сайте   
+:heavy_check_mark: Проверка кнопки Share на странице гифки   
+:heavy_check_mark: Проверка кнопок с тэгами под гифкой   
+:heavy_check_mark: Проверка логина с рандомными значениями   
+:heavy_check_mark: Проверка элементов верхнего меню   
+:heavy_check_mark: Проверка основных блоков на главной странице   
+:heavy_check_mark: Проверка поиска по @user + tag   
+:heavy_check_mark: Проверка открытия Privacy Policy по клику на баннере   
+:heavy_check_mark: Проверка открытия FAQ   
+:heavy_check_mark: Проверка страницы пользователя   
+  
+<a id="cases-api"></a>API-кейсы:
+  
+:heavy_check_mark: Поиск гифки по корректному ID   
+:heavy_check_mark: Поиск гифки по НЕкорректному ID   
+:heavy_check_mark: Поиск по слову "sticker"   
+:heavy_check_mark: Ошибка 414 при количестве символов более 50 в поисковом запросе   
+:heavy_check_mark: БАГ в API - Поиск без обязательного параметра "q"   
+:heavy_check_mark: Поиск без обязательного параметра "api_key"   
+:heavy_check_mark: Загрузка гифки   
 
 <a href="#list">К Содержанию</a>
 
@@ -69,32 +86,39 @@
 <a href="#list">К Содержанию</a>
 
 ## :desktop_computer: <a id="console"></a> Запуск из терминала
-### Локальный запуск тестов
+  
+### <a id="console-ui"></a>Локальный запуск UI-тестов
 
 ```
-gradle clean innotech_test 
+gradle clean giphy_ui -Denv="{ENV}"
 ```
+  В проекте созданы 3 файла properties для локального запуска с предустановленными настройками:
+  * chrome    
+  * edge    
+  * opera    
+  
+  В параметр {ENV} необходимо вписать один из трёх файлов.
 
+### <a id="console-api"></a>Локальный запуск API-тестов
+
+```
+gradle clean giphy_api
+```
+  
 ### Удаленный запуск тестов
 
 ```
-gradle clean innotech_test
-"-Dbrowser=${BROWSER}"
-"-DbrowserVersion=${BROWSER_VERSION}"
-"-DbrowserSize=${BROWSER_SIZE}"
-"-Dremote=${REMOTE}"
-"-Denv=${ENV}"
+clean
+${test_run}
+-Denv=${env}
 ```
-
-> `${BROWSER}` - наименование браузера (_по умолчанию - <code>chrome</code>_).
->
-> `${BROWSER_VERSION}` - версия браузера (_по умолчанию - <code>100.0</code>_).
->
-> `${BROWSER_SIZE}` - размер окна браузера (_по умолчанию - <code>1920x1080</code>_).
->
-> `${REMOTE}` - адрес удаленного сервера, на котором будут запускаться тесты.
->
-> `${ENV}` - конфиг для быстрого выбора конфигурации запуска тестов.
+  В проекте созданы 2 файла properties для удаленного запуска с предустановленными настройками:
+  * remoteChrome     
+  * remoteOpera  
+  
+> `${env}` - конфиг для быстрого выбора конфигурации запуска тестов.
+> 
+> `${test_run}` - название 
 
 <a href="#list">К Содержанию</a>
 

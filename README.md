@@ -124,7 +124,8 @@ ${test_run}
 
 ## <a id="jenkins"></a> <img width="30" alt="Jenkins" src="readme/icons/Jenkins_ico.svg"> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C17-linakramer-Diplom/)
 
-:information_source: При сборке в Jenkins можно выбрать параметры из выпадающих списков   
+:information_source: При сборке в Jenkins можно выбрать параметры из выпадающих списков 
+> Для просмотра необходимо залогиниться в Jenkins
 
 <img alt="Jenkins_screenshot" src="readme/screenshots/Jenkins.PNG">
 
@@ -133,6 +134,7 @@ ${test_run}
 ## <a id="allure"></a> <img width="30" alt="Allure" src="readme/icons/Allure_ico.svg"> [Allure](https://jenkins.autotests.cloud/job/C17-linakramer-Diplom/10/allure/) отчеты
 
 :information_source: По итогам сборки в Jenkins собирается отчет в Allure Report   
+> Для просмотра необходимо залогиниться в Jenkins
 * Автотесты написаны как "шаги" через SelenideLogger.addListener + step() = описание пройденных тестов понятно любому сотруднику
 * Подключено добавление в отчет:   
   - последнего скриншота
